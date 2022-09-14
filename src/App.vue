@@ -20,7 +20,7 @@ const showPic = ref(false)
 onMounted(async () => {
   try {
     const res = await get({
-      url: '/studentSubjects.api',
+      url: '/student.api',
       params: {
         studentId: 'xxx'
       }

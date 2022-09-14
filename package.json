@@ -1,6 +1,7 @@
 {
   "name": "vue3-single-page",
   "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "dev": "vite --mode development",
     "dev:production": "cross-env vite --mode production",
@@ -10,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/types": "^7.19.0",
     "axios": "^0.27.2",
     "element-plus": "^1.3.0-beta.3",
     "sass": "^1.54.9",
@@ -22,8 +24,8 @@
   },
   "devDependencies": {
     "@types/node": "^18.7.16",
-    "@vitejs/plugin-vue": "^2.0.0",
-    "typescript": "^4.4.4",
-    "vue-tsc": "^0.29.8"
+    "@vitejs/plugin-vue": "^3.1.0",
+    "typescript": "^4.8.3",
+    "vue-tsc": "^0.40.13"
   }
 }

@@ -34,3 +34,6 @@ css: {
 5、html注入vconcole插件，vite-plugin-html
 6、element-plus，自动按需导入安装unplugin-vue-components 和 unplugin-auto-import
  手动按需导入unplugin-element-plus
+7、vue-tsc，对 vue 3 的一个类型检测工具,比较耗时，npx vue-tsc --help
+--skipLibCheck,忽略 node_moudles 
+-noEmit 表示只验证类型，不输出编译结果
