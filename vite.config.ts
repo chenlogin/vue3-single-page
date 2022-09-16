@@ -6,34 +6,34 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import eslintPlugin from 'vite-plugin-eslint'
 
 const resolve = (dir: string) => path.join(__dirname, dir)
-
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode}) => {
+export default defineConfig(({ command, mode }) => {
   const config = loadEnv(mode, process.cwd())
   console.log('=======', { command, mode, name, config })
-  return { 
+  return {
     base: command === 'serve' ? '/' : config.VITE_CDN_URL,
     define: {
-      __DEV__: command === 'serve'
+      __DEV__: command === 'serve',
     },
     build: {
       minify: mode === 'production' ? 'esbuild' : false,
-      emptyOutDir: true
+      emptyOutDir: true,
     },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "./src/common/styles/base.scss" as *;`
-        }
-      }
+          additionalData: `@use "./src/common/styles/base.scss" as *;`,
+        },
+      },
     },
     resolve: {
       alias: {
-        '@': resolve('src')
+        '@': resolve('src'),
       },
-      extensions: ['.js', '.json', '.ts', '.vue']
+      extensions: ['.js', '.json', '.ts', '.vue'],
     },
     plugins: [
       vue(),
@@ -43,9 +43,12 @@ export default defineConfig(({ command, mode}) => {
           data: {
             title: 'Vue3单页面应用',
             injectVconsole: mode !== 'production' ? `<script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>` : '',
-            executeVconsole: mode !== 'production' ? '<script>new VConsole()</script>' : ''
+            executeVconsole: mode !== 'production' ? '<script>new VConsole()</script>' : '',
           },
-        }
+        },
+      }),
+      eslintPlugin({
+        include: ['src/**/*.ts', 'src/**/*.vue', 'src/*.ts', 'src/*.vue'],
       }),
       AutoImport({
         resolvers: [ElementPlusResolver()],
@@ -62,12 +65,12 @@ export default defineConfig(({ command, mode}) => {
         '/saas/wrongbook/': {
           target: config.VITE_MAIN_SITE_DOMAIN,
           changeOrigin: true,
-          rewrite: _path => {
+          rewrite: (_path) => {
             console.log('proxy', _path)
             return _path
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   }
 })

@@ -13,7 +13,7 @@ axios.defaults.withCredentials = true
 // axios.defaults.headers.post['Access-Control-Allow-Origin-Type'] = '*'
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: '' + (__DEV__ ? '' : import.meta.env.VITE_MAIN_SITE_DOMAIN)
+  baseURL: '' + (__DEV__ ? '' : import.meta.env.VITE_MAIN_SITE_DOMAIN),
 })
 
 // axios实例拦截响应
@@ -61,7 +61,7 @@ const request = <T = any>(config: AxiosRequestConfig): Promise<T> => {
       .then((res: AxiosResponse<T>) => {
         resolve(res.data)
       })
-      .catch(error => {
+      .catch((error) => {
         reject(error)
       })
   })

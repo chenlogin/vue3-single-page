@@ -37,3 +37,11 @@ css: {
 7、vue-tsc，对 vue 3 的一个类型检测工具,比较耗时，npx vue-tsc --help
 --skipLibCheck,忽略 node_moudles 
 -noEmit 表示只验证类型，不输出编译结果
+8、
+prettier是代码风格标准插件，eslint是代码质量校验插件。eslint其本身也包含代码格式化功能，但是相比于prettier专门为了代码格式化而生来说，eslint有些情况下可能无法正确格式化，所以需要取两者之长，结合起来使用，在本项目中prettier主要负责代码格式化，而eslint则主要用于代码质量校验
+
+yarn add eslint
+npx eslint --init
+https://juejin.cn/post/7142815651294511135
+
+9、commitizen + husky

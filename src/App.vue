@@ -1,11 +1,11 @@
 <template>
   <div>
-    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" @insert="showImage"/>
+    <HelloWorld msg="Vue 3 + TypeScript + Vite" @insert="showImage" />
     <el-radio-group v-model="radio1" class="ml-4" @change="radioChange">
       <el-radio label="0" size="large">Option 1</el-radio>
       <el-radio label="1" size="large">Option 2</el-radio>
     </el-radio-group>
-    <img class="img" v-if="showPic" src="./assets/logo.png" />
+    <img v-if="showPic" class="img" src="./assets/logo.png" />
   </div>
 </template>
 
@@ -22,23 +22,22 @@ onMounted(async () => {
     const res = await get({
       url: '/student.api',
       params: {
-        studentId: 'xxx'
-      }
+        studentId: 'xxx',
+      },
     })
     console.log(res)
-  }catch(e) {
-
+  } catch (e) {
+    console.log(e)
   }
 })
-  
-const radioChange = (val:number) => {
+
+const radioChange = (val: number) => {
   console.log(val)
 }
-const showImage = (val:string) => {
+const showImage = (val: string) => {
   console.log(val)
   showPic.value = !showPic.value
 }
-
 </script>
 
 <style>
@@ -49,8 +48,8 @@ const showImage = (val:string) => {
   color: #2c3e50;
   padding: 10px;
 }
-.img{
-  display:block;
-  width: 100px
+.img {
+  display: block;
+  width: 100px;
 }
 </style>
