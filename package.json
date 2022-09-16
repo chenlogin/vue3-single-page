@@ -10,12 +10,15 @@
     "build:test": "vite build --mode test",
     "build:production": "vite build  --mode production",
     "preview": "vite preview",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@babel/core": "^7.19.1",
     "@babel/eslint-parser": "^7.19.1",
     "@babel/types": "^7.19.0",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "axios": "^0.27.2",
@@ -30,8 +33,12 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.4.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "sass": "^1.54.9",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-element-plus": "^0.2.0",
     "unplugin-vue-components": "^0.22.4",
@@ -46,9 +53,37 @@
     "typescript": "^4.8.3",
     "vue-tsc": "^0.40.13"
   },
-  "config":{
-    "commitizen":{
-        "path":"node_modules/cz-conventional-changelog"
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,less,sass,scss,html}": [
+      "stylelint --fix"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }
