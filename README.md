@@ -49,7 +49,13 @@ yarn add eslint
 npx eslint --init
 https://juejin.cn/post/7142815651294511135
 
-9、commitizen + husky
+9、husky + commitlint + commitizen
 https://juejin.cn/post/6844904025868271629
 
-10.Stylelint
+10、Stylelint
+
+11、router, yarn add vue-router@4
+使用一个自定义组件 router-link 来创建链接。这使得 Vue Router 可以在不重新加载页面的情况下更改 URL
+router-view 将显示与 url 对应的组件
+使用 /about 这样的静态路由和 /users/:userId 这样的动态路由，使用带有参数的路由时需要注意的是，当用户从 /users/johnny 导航到 /users/jolyne 时，相同的组件实例将被重复使用。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。不过，这也意味着组件的生命周期钩子不会被调用。
+this.$router.push 导航到不同的 URL，这个方法会向 history 栈添加一个新的记录，所以，当用户点击浏览器后退按钮时，会回到之前的 URL。

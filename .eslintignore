@@ -4,3 +4,4 @@ auto-imports.d.ts
 components.d.ts
 .eslintrc.js
 prettier.config.js
+public

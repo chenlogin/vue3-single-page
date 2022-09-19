@@ -1,11 +1,17 @@
 <template>
   <div>
     <HelloWorld msg="Vue 3 + TypeScript + Vite" @insert="showImage" />
-    <el-radio-group v-model="radio1" class="ml-4" @change="radioChange">
-      <el-radio label="0" size="large">Option 1</el-radio>
-      <el-radio label="1" size="large">Option 2</el-radio>
-    </el-radio-group>
     <img v-if="showPic" class="img" src="./assets/logo.png" />
+    <p>
+      <!--使用 router-link 组件进行导航 -->
+      <!--通过传递 `to` 来指定链接 -->
+      <!--`<router-link>` 将呈现一个带有正确 `href` 属性的 `<a>` 标签-->
+      <router-link to="/">Go to Home</router-link>
+      <router-link to="/about">Go to About</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,7 +20,6 @@ import { onMounted, ref } from 'vue'
 import { get } from '@/common/request'
 import HelloWorld from './components/HelloWorld.vue'
 
-const radio1 = ref('1')
 const showPic = ref(false)
 
 onMounted(async () => {
@@ -31,9 +36,6 @@ onMounted(async () => {
   }
 })
 
-const radioChange = (val: number) => {
-  console.log(val)
-}
 const showImage = (val: string) => {
   console.log(val)
   showPic.value = !showPic.value
@@ -48,8 +50,17 @@ const showImage = (val: string) => {
   color: #2c3e50;
   padding: 10px;
 }
+
 .img {
   display: block;
   width: 100px;
+}
+
+a {
+  display: inline-block;
+  background-color: antiquewhite;
+  text-align: center;
+  width: 150px;
+  margin: 5px 10px 5px 0;
 }
 </style>

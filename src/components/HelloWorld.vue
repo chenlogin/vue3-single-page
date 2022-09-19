@@ -1,18 +1,21 @@
 <template>
-  <div>{{ msg }}</div>
+  <div>{{ msg || currentRoute.meta.title }}</div>
   <el-button type="primary" @click="buttonClick">ElButton</el-button>
-  <el-tree-select v-model="value" :data="data" check-strictly show-checkbox multiple />
+  <el-tree-select v-if="currentRoute.meta.showSelect" v-model="value" :data="data" check-strictly show-checkbox multiple />
 </template>
 
 <script lang="ts" setup>
 import { defineProps, reactive, nextTick, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
+const currentRoute = useRoute()
 const props = defineProps({
   msg: {
     type: String,
     default: '',
   },
 })
+
 const paperListTable = reactive({
   columns: [
     {

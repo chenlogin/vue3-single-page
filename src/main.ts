@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router/index'
 import './style.scss'
 
-const app = createApp(App)
+const app = createApp(App).use(router)
 app.mount('#app')
 console.log(import.meta.env)
 
@@ -13,10 +14,9 @@ console.log(import.meta.env)
 // 插入vconsole
 // vue-tsc,ts
 // eslint，prettier
+// husky commitlint commitizen
+// stylelint
+// router，按需引入
 
-// commit，git commit
-
-// router
-// 按需引入
-// pinia，通信
+// pinia，通信，监听
 // 复合函数

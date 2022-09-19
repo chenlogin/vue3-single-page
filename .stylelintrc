@@ -1,3 +1,16 @@
-{ 
-  "extends": "stylelint-config-standard"
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "customSyntax": "postcss-html",
+  "rules": {
+    "font-family-no-missing-generic-family-keyword": null,
+    "no-descending-specificity": null,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["v-deep"]
+      }
+    ],
+    "string-quotes": "single"
+  }
 }

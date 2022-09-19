@@ -42,7 +42,7 @@ export default defineConfig(({ command, mode }) => {
         inject: {
           data: {
             title: 'Vue3单页面应用',
-            injectVconsole: mode !== 'production' ? `<script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>` : '',
+            injectVconsole: mode !== 'production' ? `<script src="/vconsole.min.js"></script>` : '',
             executeVconsole: mode !== 'production' ? '<script>new VConsole()</script>' : '',
           },
         },
