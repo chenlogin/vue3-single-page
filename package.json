@@ -12,7 +12,9 @@
     "preview": "vite preview",
     "commit": "git-cz",
     "prepare": "husky install",
-    "stylelint": "stylelint \"src/**/*.{vue,htm,html,css,sss,less,scss}\""
+    "stylelint": "stylelint \"src/**/*.{vue,htm,html,css,sss,less,scss}\"",
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
+    "prettier": "prettier --write ./src"
   },
   "dependencies": {
     "@babel/core": "^7.19.1",

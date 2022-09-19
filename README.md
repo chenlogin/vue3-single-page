@@ -52,7 +52,7 @@ https://juejin.cn/post/7142815651294511135
 9、husky + commitlint + commitizen
 https://juejin.cn/post/6844904025868271629
 
-10、Stylelint
+10、Stylelint,stylelint-config-standard,stylelint-order,stylelint-scss,postcss-html,postcss-scss
 
 11、router, yarn add vue-router@4
 使用一个自定义组件 router-link 来创建链接。这使得 Vue Router 可以在不重新加载页面的情况下更改 URL
