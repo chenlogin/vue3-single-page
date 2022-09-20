@@ -59,3 +59,12 @@ https://juejin.cn/post/6844904025868271629
 router-view 将显示与 url 对应的组件
 使用 /about 这样的静态路由和 /users/:userId 这样的动态路由，使用带有参数的路由时需要注意的是，当用户从 /users/johnny 导航到 /users/jolyne 时，相同的组件实例将被重复使用。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。不过，这也意味着组件的生命周期钩子不会被调用。
 this.$router.push 导航到不同的 URL，这个方法会向 history 栈添加一个新的记录，所以，当用户点击浏览器后退按钮时，会回到之前的 URL。
+12、pinia,
+createPinia,defineStore
+pinia-plugin-persistedstate,持久化
+
+13、Composables 组合式函数，Vue3 composition API 案例，写类 Hooks 函数（vue3 成为组合式函数）实现 minxin 功能的
+Vue2 minxins 混入器案缺点:
+当使用了多个 minxins 时, property 来自哪个 mixin 变得不清晰,这使追溯实现和理解组件行为变得困难。
+命名冲突会覆盖。
+隐式的跨 minxin 交流:多个 minxin 需要依赖共享的 property 键名来进行相互作用,这使得它们隐性地耦合在一起。而一个组合式函数的返回值可以作为另一个组合式函数的参数被传入,像普通函数那样。

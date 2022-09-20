@@ -19,8 +19,16 @@
 import { onMounted, ref } from 'vue'
 import { get } from '@/common/request'
 import HelloWorld from './components/HelloWorld.vue'
+import { storeToRefs } from 'pinia'
+import { useStore } from './store/counter'
 
 const showPic = ref(false)
+const store = useStore()
+//从 Store 中提取属性同时保持其响应式
+const { counter, doubleCount } = storeToRefs(store)
+store.updateName('cm')
+store.increment()
+console.log('store:', { name: store.name, counter: counter.value, doublePlusOne: store.doublePlusOne })
 
 onMounted(async () => {
   try {
