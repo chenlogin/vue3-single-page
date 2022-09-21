@@ -1,6 +1,6 @@
 ## vue3 + vite
 
-- vue-single-page,单页项目
+- vue3-single-page,单页项目
 
   - css,js, pic, html
   - sass
@@ -27,4 +27,4 @@
 
   - Composables 组合式函数
 
-- vue-multipage,多页项目
+- vue3-multipage,多页项目
