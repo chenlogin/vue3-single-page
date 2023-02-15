@@ -70,7 +70,7 @@ router-view 将显示与 url 对应的组件
 
 12、pinia,
 createPinia,defineStore
-pinia-plugin-persistedstate #持久化
+pinia-plugin-persistedstate #持久化,将 store 的 state 中的全部数据进行缓存，直接在 state 同级下面添加 persist 对象，默认将数据存放在浏览器的 SessionStorage 中
 
 13、Composables 组合式函数，Vue3 composition API 案例，写类 Hooks 函数（vue3 成为组合式函数）实现 minxin 功能的
 Vue2 minxins 混入器案缺点:

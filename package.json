@@ -20,14 +20,21 @@
     "@babel/core": "^7.19.1",
     "@babel/eslint-parser": "^7.19.1",
     "@babel/types": "^7.19.0",
+
+
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+
     "axios": "^0.27.2",
+
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
+    
     "element-plus": "^2.2.16",
+
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
@@ -36,10 +43,13 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.4.0",
+
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+
     "pinia": "^2.0.22",
     "pinia-plugin-persistedstate": "^2.2.0",
+    
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.5",
     "prettier": "^2.7.1",
